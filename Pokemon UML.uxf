@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>80</y>
+      <w>208</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Pokemon
+--
+- hitpoints: int
+- attackPoints: int
+- speed: double
+- name: String
+- number: int
+--
++ get/set
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>248</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>GeoDude
+--
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>96</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Rock
+--
++ Smash
++ DirtSmash
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>176</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>160</y>
+      <w>80</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>264</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Water
+--
++ Swim
++ AquaBeam
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>104</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Grass
+--
++ Itch
++ SolarBeam
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>384</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Squirtle
+--
++ Water Spray
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>176</y>
+      <w>64</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>328</y>
+      <w>32</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>232</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Bulbasaur
+--
++ PhotoSynthesis
++ LeafSlice
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>176</y>
+      <w>320</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>168</y>
+      <w>224</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>392</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Lotad
+--
++ Grass Sword
++ Allergen
+bg=green
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>168</y>
+      <w>80</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>328</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>176</y>
+      <w>200</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>248</y>
+      <w>128</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Onix
+--
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>160</y>
+      <w>72</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>176</y>
+      <w>224</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;90.0</additional_attributes>
+  </element>
+</diagram>

@@ -166,7 +166,7 @@ public class PokePanel extends JPanel
 				nameField.setText(baseController.getPokedex().get(selected).getName());
 				numberField.setText(baseController.getPokedex().get(selected).getNumber() + "");
 				combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
-				
+				// TODO add rest of listener
 
 				
 			}

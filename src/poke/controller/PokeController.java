@@ -1,24 +1,37 @@
 package poke.controller;
 
 
-import poke.model.Pokemon;
+import poke.model.*;
 import poke.view.PokeFrame;
 import poke.view.PokePanel;
+import java.util.ArrayList;
 
 public class PokeController
 {
-	private Pokemon pokemon;
+	private ArrayList<Pokemon> pokedex;
 	private PokeFrame appFrame;
 	private PokePanel appPanel;
 
 	public PokeController()
 	{
-		pokemon = new Pokemon();
+		pokedex = new ArrayList<Pokemon>();
 		appFrame = new PokeFrame(this);
 	}
 	
 	public void start()
 	{
+		buildPokedex();
+	}
+	
+	private void buildPokedex()
+	{
+		Pikachu myPikachu = new Pikachu();
 		
 	}
+	
+	public ArrayList<Pokemon> getPokedex()
+	{
+		return pokedex;
+	}
+	
 }

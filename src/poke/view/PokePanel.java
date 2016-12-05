@@ -3,7 +3,7 @@ package poke.view;
 
 import javax.swing.*;
 
-import chat.view.ChatPanel;
+
 import poke.controller.PokeController;
 
 import java.awt.Color;
@@ -35,6 +35,7 @@ public class PokePanel extends JPanel
 	private JTextField nameField;
 	private JTextField numberField;
 	private JTextArea advancedArea;
+	private ImageIcon pokemonIcon;
 	
 	public PokePanel(PokeController baseController)
 	{
@@ -43,7 +44,7 @@ public class PokePanel extends JPanel
 		
 		
 		
-		this.pokedexSelector = new JComboBox(new String [] {"poke1", "poke2", "poke3"});
+		this.pokedexSelector = new JComboBox(new String [] {"Pikachu", "Aron", "Bulbasaur"});
 		this.pokemonLabel =new JLabel("The current pokemon: ");
 		this.healthLabel = new JLabel("Health Points: ");
 		this.combatLabel = new JLabel("Combat Points: ");
@@ -57,7 +58,8 @@ public class PokePanel extends JPanel
 		this.nameField = new JTextField(25);
 		this.numberField = new JTextField(5);
 		this.advancedArea = new JTextArea(10,25);
-		//this.pokePicture = new JLabel(new ImageIcon(PokePanel.class.getResource("/poke/view/images/chatbot.png")), JLabel.CENTER);
+		this.pokePicture = new JLabel(new ImageIcon(PokePanel.class.getResource("/poke/view/images/pokeball.jpeg")), JLabel.CENTER);
+		this.updateButton = new JButton("Update");
 		
 		setupPanel();
 		setupLayout();
@@ -65,7 +67,50 @@ public class PokePanel extends JPanel
 		
 	}
 	
-	public void setupPanel()
+    private void changeColorBasedOnData(String data)
+    {
+    	if (data.contains("Grass"))
+    	{
+    		this.setBackground(Color.GREEN);
+    	}
+    	else if (data.contains("Electric"))
+    	{
+    		this.setBackground(Color.YELLOW);
+
+    	}
+    	else if (data.contains("Water"))
+    	{
+    		this.setBackground(Color.BLUE);
+
+    	}
+    	else if (data.contains("Rock"))
+    	{
+    		this.setBackground(Color.GRAY);
+
+    	}
+    	
+    		repaint();
+    }
+    
+    private void changeImageDisplay(String name)
+    {
+    	String path = "/poke/view/images/";
+    	String defaultName = "pokeball";
+    	String extension = ".png";
+    	try
+    	{
+    		pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+    		pokemonLabel.setIcon(pokemonIcon);
+    	}
+    	catch(NullPointerException missingFile)
+    	{
+    		pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+    		pokemonLabel.setIcon(pokemonIcon);
+    	}
+    	repaint();
+    }
+	
+ 	public void setupPanel()
 	{
 		this.setBackground(Color.GRAY);
 		this.add(updateButton);
@@ -83,12 +128,15 @@ public class PokePanel extends JPanel
 		this.add(nameField);
 		this.add(numberField);
 		this.add(advancedArea);
+		this.add(pokePicture);
+		this.add(updateButton);
 		this.setLayout(null);
 		
 	}
+	
 	public void setupLayout()
 	{
-		updateButton.setBounds(196, 448, 88, 29);
+		updateButton.setBounds(105, 449, 54, 53);
 		pokedexSelector.setBounds(164, 7, 120, 20);
 		pokemonLabel.setBounds(6, 6, 161, 20);
 		healthLabel.setBounds(260, 50, 92, 20);
@@ -101,14 +149,24 @@ public class PokePanel extends JPanel
 		speedField.setBounds(360, 132, 92, 20);
 		combatField.setBounds(360, 89, 92, 20);
 		nameField.setBounds(119, 50, 109, 20);
-		numberField.setBounds(164, 88, 74, 20);
-		advancedArea.setBounds(16, 210, 436, 214);
-		
+		numberField.setBounds(164, 89, 74, 20);
+		advancedArea.setBounds(16, 210, 212, 225);
+		pokePicture.setBounds(244,210,225,225);
+		updateButton.setBounds(200,444,92,20);
 
 	}
+	
 	public void setupListeners()
 	{
-		
+		pokedexSelector.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				int selected = pokedexSelector.getSelectedIndex();
+				nameField.setText(baseController.getPokedex().get(selected).getName());
+				
+			}
+		});
 	}
 	
 }

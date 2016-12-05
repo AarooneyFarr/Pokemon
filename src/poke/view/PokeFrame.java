@@ -19,7 +19,7 @@ public class PokeFrame extends JFrame
 		this.baseController = baseController;
 		appPanel = new PokePanel(baseController);
 		
-		setupFrame(800,800);
+		setupFrame(500,500);
 		setupListeners();
 	}
 	

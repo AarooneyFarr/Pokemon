@@ -26,6 +26,7 @@ public class PokeController
 	private void buildPokedex()
 	{
 		Pikachu myPikachu = new Pikachu();
+		pokedex.add(myPikachu);
 		
 	}
 	

@@ -47,6 +47,13 @@ public abstract class Pokemon
 		
 	}
 	
+	public String getPokemonInformation()
+	{
+		String pokemonInfo = "";
+		
+		return pokemonInfo;
+	}
+	
 	public String getPokemonTypes()
 	{
 		String pokemonTypes = "This pokemon has the following type: \n";

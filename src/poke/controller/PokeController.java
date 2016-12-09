@@ -27,12 +27,26 @@ public class PokeController
 	{
 		Pikachu myPikachu = new Pikachu();
 		pokedex.add(myPikachu);
+		Bulbasaur myBulbasaur = new Bulbasaur();
+		pokedex.add(myBulbasaur);
 		
 	}
 	
 	public ArrayList<Pokemon> getPokedex()
 	{
 		return pokedex;
+	}
+	
+	public PokeFrame getBaseFrame()
+	{
+		return appFrame;
+		
+	}
+	
+	public PokePanel getBasePanel()
+	{
+		return appPanel;
+		
 	}
 	
 }

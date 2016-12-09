@@ -16,10 +16,12 @@ public abstract class Pokemon
 	private Scanner pokeScanner;
 	private File pokeFile;
 	private String fileName;
+	private String extraInfo;
 	
 	
 	public Pokemon()
 	{
+		extraInfo = "";
 		type = "";
 		hitPoints = 0;
 		attackPoints = 0;
@@ -49,9 +51,9 @@ public abstract class Pokemon
 	
 	public String getPokemonInformation()
 	{
-		String pokemonInfo = "";
 		
-		return pokemonInfo;
+		
+		return extraInfo;
 	}
 	
 	public String getPokemonTypes()
@@ -71,7 +73,7 @@ public abstract class Pokemon
 			String temp = current.replace(this.getClass().getPackage().getName() + ".", "");
 			pokemonTypes += temp + "\n";
 		}
-		return pokemonTypes;
+		return pokemonTypes + extraInfo;
 	}
 	
 	public int getAttackPoints()
@@ -109,7 +111,7 @@ public abstract class Pokemon
 		this.hitPoints = hitPoints;
 	}
 	
-	public void setSpeed(int speed)
+	public void setSpeed(double speed)
 	{
 		this.speed = speed;
 	}
@@ -117,6 +119,16 @@ public abstract class Pokemon
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+	
+	public void setAttackPoints(int attackPoints)
+	{
+		this.attackPoints = attackPoints;
+	}
+	
+	public void setPokemonInfo(String extraInfo)
+	{
+		this.extraInfo = extraInfo;
 	}
 	
 	

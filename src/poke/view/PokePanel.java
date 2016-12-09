@@ -3,11 +3,11 @@ package poke.view;
 import javax.swing.*;
 
 import poke.controller.PokeController;
-
+import java.awt.event.MouseListener;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+import java.awt.event.MouseEvent;
 import poke.model.Pokemon;
 
 import java.awt.Dimension;
@@ -37,7 +37,7 @@ public class PokePanel extends JPanel {
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
 
-		this.pokedexSelector = new JComboBox(new String[] { "Pikachu", "Aron", "Bulbasaur" });
+		this.pokedexSelector = new JComboBox(new String[] { "Pikachu", "Bulbasaur" });
 		this.pokemonLabel = new JLabel("The current pokemon: ");
 		this.healthLabel = new JLabel("Health Points: ");
 		this.combatLabel = new JLabel("Combat Points: ");
@@ -78,20 +78,21 @@ public class PokePanel extends JPanel {
 		repaint();
 	}
 
-	private String changeImageDisplay(String name) {
+	private void changeImageDisplay(String name) {
+		
 		String path = "/poke/view/images/";
 		String defaultName = "pokeball";
 		String extension = ".png";
 		try {
 			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
-			pokemonLabel.setIcon(pokemonIcon);
+			pokePicture.setIcon(pokemonIcon);
 		} catch (NullPointerException missingFile) {
 			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + ".jpeg"));
-			pokemonLabel.setIcon(pokemonIcon);
+			pokePicture.setIcon(pokemonIcon);
 		}
 		
 		repaint();
-		return path + defaultName + extension;
+		
 		
 	}
 
@@ -112,6 +113,8 @@ public class PokePanel extends JPanel {
 		this.add(nameField);
 		this.add(numberField);
 		this.add(advancedArea);
+		advancedArea.setLineWrap(true);
+		advancedArea.setWrapStyleWord(true);
 		this.add(pokePicture);
 		this.add(updateButton);
 		this.setLayout(null);
@@ -140,10 +143,11 @@ public class PokePanel extends JPanel {
 	}
 
 	public void setupListeners() {
-		pokedexSelector.addActionListener(new ActionListener() {
+	
+	pokedexSelector.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent selection) {
 				int selected = pokedexSelector.getSelectedIndex();
-				nameField.setText(baseController.getPokedex().get(selected).getName());
+				nameField.setText(baseController.getPokedex().get(selected).getName()+"");
 				numberField.setText(baseController.getPokedex().get(selected).getNumber() + "");
 				combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
 				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
@@ -151,12 +155,63 @@ public class PokePanel extends JPanel {
 				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation() + "\n"
 						+ baseController.getPokedex().get(selected).getPokemonTypes());
 				changeColorBasedOnData(baseController.getPokedex().get(selected).getPokemonTypes());
-				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getName());
+				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 
 				
 
 			}
 		});
+	
+	updateButton.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e)
+		{
+			int selected = pokedexSelector.getSelectedIndex();
+			
+			baseController.getPokedex().get(selected).setName(nameField.getText()+"");
+			baseController.getPokedex().get(selected).setAttackPoints(Integer.parseInt(combatField.getText()+""));
+			baseController.getPokedex().get(selected).setSpeed(Double.parseDouble(speedField.getText()+""));
+			baseController.getPokedex().get(selected).setHitPoints(Integer.parseInt(healthField.getText()+""));
+			
+			
+			
+			
+			
+		}
+	});
+	
+	this.addMouseListener(new MouseListener()
+			{
+			public void mouseEntered(MouseEvent entered)
+			{
+				
+			}
+			
+			public void mouseExited(MouseEvent exited)
+			{
+				
+			}
+			
+			public void mousePressed(MouseEvent pressed)
+			{
+				
+			}
+			
+			public void mouseReleased(MouseEvent released)
+			{
+				
+			}
+			
+			public void mouseClicked(MouseEvent clicked)
+			{
+				
+			}
+			
+			
+			
+			});
+	
+	
+	
 	}
 
 }

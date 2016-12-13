@@ -5,18 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import poke.controller.PokemonController;
-import poke.view.PokemonPanel;
+import poke.controller.PokeController;
+import poke.view.PokePanel;
 
 
 public class PanelTest
 {
-	private PokemonPanel testedPanel;
+	private PokePanel testedPanel;
 	
 	@Before
 	public void setUp() throws Exception
 	{
-		testedPanel = new PokemonPanel(new PokemonController());
+		testedPanel = new PokePanel(new PokeController());
 	}
 
 	@After

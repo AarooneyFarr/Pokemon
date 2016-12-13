@@ -49,11 +49,16 @@ public abstract class Pokemon
 		
 	}
 	
+	public String toString()
+	{
+		return this.name;
+	}
+	
 	public String getPokemonInformation()
 	{
 		
 		
-		return extraInfo;
+		return "";
 	}
 	
 	public String getPokemonTypes()
@@ -73,7 +78,7 @@ public abstract class Pokemon
 			String temp = current.replace(this.getClass().getPackage().getName() + ".", "");
 			pokemonTypes += temp + "\n";
 		}
-		return pokemonTypes + extraInfo;
+		return pokemonTypes;
 	}
 	
 	public int getAttackPoints()

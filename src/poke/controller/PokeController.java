@@ -4,17 +4,17 @@ package poke.controller;
 import poke.model.*;
 import poke.view.PokeFrame;
 import poke.view.PokePanel;
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class PokeController
 {
-	private ArrayList<Pokemon> pokedex;
+	private Vector<Pokemon> pokedex;
 	private PokeFrame appFrame;
 	private PokePanel appPanel;
 
 	public PokeController()
 	{
-		pokedex = new ArrayList<Pokemon>();
+		pokedex = new Vector<Pokemon>();
 		appFrame = new PokeFrame(this);
 	}
 	
@@ -29,10 +29,18 @@ public class PokeController
 		pokedex.add(myPikachu);
 		Bulbasaur myBulbasaur = new Bulbasaur();
 		pokedex.add(myBulbasaur);
+		Empoleon myEmpoleon = new Empoleon();
+		pokedex.add(myEmpoleon);
+		Abra myAbra = new Abra();
+		pokedex.add(myAbra);
+		Cubone myCubone = new Cubone();
+		pokedex.add(myCubone);
+		Aron myAron = new Aron();
+		pokedex.add(myAron);
 		
 	}
 	
-	public ArrayList<Pokemon> getPokedex()
+	public Vector<Pokemon> getPokedex()
 	{
 		return pokedex;
 	}

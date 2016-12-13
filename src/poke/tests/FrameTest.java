@@ -6,17 +6,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import poke.view.*;
-import poke.controller.PokemonController;
+import poke.controller.PokeController;
 
 
 public class FrameTest
 {
 
-	private PokemonFrame testedFrame;
+	private PokeFrame testedFrame;
 	@Before
 	public void setUp() throws Exception
 	{
-		testedFrame = new PokemonFrame(new PokemonController());
+		testedFrame = new PokeFrame(new PokeController());
 	}
 
 	@After
@@ -36,7 +36,7 @@ public class FrameTest
 	{
 		assertNotNull("You need a title", testedFrame.getTitle());
 		assertTrue("Your title needs a reference to Pokemon", testedFrame.getTitle().contains("Pokemon"));
-		assertTrue("You need a PokemonPanel inside the frame", testedFrame.getContentPane() instanceof PokemonPanel);
+		assertTrue("You need a PokemonPanel inside the frame", testedFrame.getContentPane() instanceof PokePanel);
 	}
 
 }

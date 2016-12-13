@@ -6,18 +6,18 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import poke.controller.PokemonController;
+import poke.controller.PokeController;
 import poke.model.Pokemon;
-import poke.view.PokemonFrame;
+import poke.view.PokeFrame;
 
 public class ControllerTest
 {
-	private PokemonController testedController;
+	private PokeController testedController;
 	
 	@Before
 	public void setUp() throws Exception
 	{
-		testedController = new PokemonController();
+		testedController = new PokeController();
 	}
 
 	@After
@@ -54,7 +54,7 @@ public class ControllerTest
 	public void testGetBaseFrame()
 	{
 		assertNotNull("You need an instance of PokemonFrame", testedController.getBaseFrame());
-		assertTrue("Your baseFrame needs to be of type PokemonFrame", testedController.getBaseFrame() instanceof PokemonFrame);
+		assertTrue("Your baseFrame needs to be of type PokemonFrame", testedController.getBaseFrame() instanceof PokeFrame);
 	}
 
 	@Test

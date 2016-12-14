@@ -57,4 +57,17 @@ public class PokeController
 		
 	}
 	
+	public void updateSelected(int selected,int hitPoints, int attackPoints, double speed, String name, int number, String type)
+	{
+		pokedex.elementAt(selected).setHitPoints(hitPoints);
+		pokedex.elementAt(selected).setAttackPoints(attackPoints);
+		pokedex.elementAt(selected).setSpeed(speed);
+		pokedex.elementAt(selected).setName(name);
+		pokedex.elementAt(selected).setType(type);
+		
+		
+		
+		
+	}
+	
 }

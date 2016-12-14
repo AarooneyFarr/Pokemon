@@ -204,10 +204,7 @@ public class PokePanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int selected = pokedexSelector.getSelectedIndex();
 
-				baseController.getPokedex().get(selected).setName(nameField.getText() + "");
-				baseController.getPokedex().get(selected).setAttackPoints(Integer.parseInt(combatField.getText() + ""));
-				baseController.getPokedex().get(selected).setSpeed(Double.parseDouble(speedField.getText() + ""));
-				baseController.getPokedex().get(selected).setHitPoints(Integer.parseInt(healthField.getText() + ""));
+				baseController.updateSelected(selected,Integer.parseInt(healthField.getText()), Integer.parseInt(combatField.getText()), Double.parseDouble(speedField.getText()), nameField.getText(), Integer.parseInt(numberField.getText()), baseController.getPokedex().get(selected).getPokemonTypes() );
 
 			}
 		});

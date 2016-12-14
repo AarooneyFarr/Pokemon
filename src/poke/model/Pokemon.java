@@ -136,6 +136,11 @@ public abstract class Pokemon
 		this.extraInfo = extraInfo;
 	}
 	
+	public void setType(String type)
+	{
+		this.type = type;
+	}
+	
 	
 	
 	

@@ -37,7 +37,7 @@ public class ControllerTest
 	{
 		assertTrue("Pokedex has something in it", testedController.getPokedex().size() > 0);
 		assertFalse("Pokemon need real names", testedController.getPokedex().get(0).getName().equals(""));
-		testedController.updateSelected(0, "JUnit", 0, 0, .0);
+		testedController.updateSelected(0,0,0,0.0, "JUnit", 0, "JUnit");
 		assertTrue("Update method failed", testedController.getPokedex().get(0).getName().equals("JUnit"));
 	}
 
@@ -60,7 +60,7 @@ public class ControllerTest
 	@Test
 	public void testPokemonDiversity()
 	{
-		ArrayList<String > tempList = new ArrayList<String>();
+		ArrayList<String> tempList = new ArrayList<String>();
 		int implemented = 0;
 		
 		for(int index = 0; index < testedController.getPokedex().size();  index++)

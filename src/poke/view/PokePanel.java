@@ -211,11 +211,11 @@ public class PokePanel extends JPanel {
 
 		this.addMouseListener(new MouseListener() {
 			public void mouseEntered(MouseEvent entered) {
-
+				
 			}
 
 			public void mouseExited(MouseEvent exited) {
-
+				changeBackground("pokeball");
 			}
 
 			public void mousePressed(MouseEvent pressed) {

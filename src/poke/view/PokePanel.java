@@ -34,6 +34,7 @@ public class PokePanel extends JPanel {
 	private ImageIcon pokemonIcon;
 	private JLabel backgroundPic;
 	private ImageIcon backgroundIcon;
+	private JPanel poke;
 
 	public PokePanel(PokeController baseController) {
 		this.baseController = baseController;
@@ -58,7 +59,7 @@ public class PokePanel extends JPanel {
 		this.updateButton = new JButton("Update");
 		this.backgroundPic = new JLabel(new ImageIcon(PokePanel.class.getResource("/poke/view/images/pokeball.jpeg")),
 				JLabel.CENTER);
-		
+		poke = this;
 		
 		setupPanel();
 		setupLayout();
@@ -203,9 +204,13 @@ public class PokePanel extends JPanel {
 		updateButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int selected = pokedexSelector.getSelectedIndex();
-
+				try{
 				baseController.updateSelected(selected,Integer.parseInt(healthField.getText()), Integer.parseInt(combatField.getText()), Double.parseDouble(speedField.getText()), nameField.getText(), Integer.parseInt(numberField.getText()), baseController.getPokedex().get(selected).getPokemonTypes() );
-
+				}
+				catch(NumberFormatException error)
+					{
+						JOptionPane.showMessageDialog(poke, "Please enter only whole numbers in all fields but speed.");
+					}
 			}
 		});
 
